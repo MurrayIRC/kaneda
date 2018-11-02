@@ -2,7 +2,6 @@
 using UnityEngine;
 
 public class FirstPersonController : MonoBehaviour {
-	
 
 	private void Update() {
 		HandleMovement();
