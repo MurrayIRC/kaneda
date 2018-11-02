@@ -1,8 +1,7 @@
-﻿using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using Boing;
 
 public class FirstPersonController : MonoBehaviour {
-
 	private void Update() {
 		HandleMovement();
 	}
@@ -16,6 +15,6 @@ public class FirstPersonController : MonoBehaviour {
 	}
 
 	private void HandleCamera() {
-
+		
 	}
 }
