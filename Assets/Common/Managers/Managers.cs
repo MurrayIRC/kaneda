@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Reflection;
 using UnityEngine;
@@ -10,6 +11,7 @@ public class Managers : MonoBehaviour {
 	#region Manager References
 
 	[Manager] public static AppManager App { get; private set; }
+	[Manager] public static InputManager Input { get; private set; }
 
 	#endregion
 
@@ -170,3 +172,47 @@ public class Managers : MonoBehaviour {
 		Destroy(this.gameObject);
 	}
 }
+
+#region Manager Base Class Definitions
+
+/// <summary>
+/// Base manager class.
+/// </summary>
+/// <remarks>
+/// Inherit from this puppy if you want a persistent manager class. It's like a singleton,
+/// but better encapsulated and easy to track cause it all gets handled by the Managers class.
+/// 
+/// Be sure to include the managers you make at the top of Managers as well with the [Manager] header!
+/// </remarks>
+public abstract class Manager : MonoBehaviour, IManager {
+    protected ManagerState managerState = ManagerState.Uninitialized;
+	public ManagerState ManagerState { get { return managerState; } }
+
+	public abstract void Startup();
+	public abstract void Shutdown();
+}
+
+public enum ManagerState {
+	Uninitialized,
+	Started,
+	Shutdown
+}
+
+public interface IManager {
+	ManagerState ManagerState { get; }
+	void Startup();
+	void Shutdown();
+}
+
+[AttributeUsage(AttributeTargets.Property)]
+public class ManagerAttribute : Attribute {
+	public int? InitStage = null;
+	public int InitStageArg { 
+		get { throw new NotImplementedException(); }
+		set { InitStage = value; } 
+	}
+
+	public string CustomHookup = null;
+}
+
+#endregion
