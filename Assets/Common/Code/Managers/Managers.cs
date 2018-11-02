@@ -192,6 +192,9 @@ public abstract class Manager : MonoBehaviour, IManager {
 	public abstract void Shutdown();
 }
 
+/// <summary>
+/// State definitions for telling Managers how to handle a specific manager.
+/// </summary>
 public enum ManagerState {
 	Uninitialized,
 	Started,
