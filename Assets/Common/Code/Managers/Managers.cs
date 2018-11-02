@@ -12,6 +12,7 @@ public class Managers : MonoBehaviour {
 
 	[Manager] public static AppManager App { get; private set; }
 	[Manager] public static InputManager Input { get; private set; }
+	[Manager] public static SettingsManager Settings { get; private set; }
 
 	#endregion
 

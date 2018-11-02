@@ -6,7 +6,7 @@ public class AppManager : Manager {
     [SerializeField] private CursorLockMode cursorState;
 
     public override void Startup() {
-        QualitySettings.vSyncCount = 0;
+        //QualitySettings.vSyncCount = 0;
 		Application.targetFrameRate = 60;
 
         Cursor.lockState = cursorState;
@@ -18,9 +18,13 @@ public class AppManager : Manager {
         if (Input.GetKeyDown(KeyCode.Escape)) {
             // bring up the menu that has the quit option?
 
-            if (cursorState == CursorLockMode.Locked) {
-                bool isLocked = Cursor.lockState == CursorLockMode.Locked;
-                Cursor.lockState = isLocked ? CursorLockMode.None : CursorLockMode.Locked;
+            if (cursorState == CursorLockMode.Locked && Cursor.lockState == CursorLockMode.Locked) {
+                Cursor.lockState = CursorLockMode.None;
+            }
+        }
+        if (Input.GetMouseButtonDown(0)) {
+            if (cursorState == CursorLockMode.Locked && Cursor.lockState == CursorLockMode.None) {
+                Cursor.lockState = CursorLockMode.Locked;
             }
         }
     }
