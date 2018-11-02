@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SynCore.Tweening {
+namespace Boing {
     public static class TweenCache<T> where T : new() {
         private static Stack<T> objectStack = new Stack<T>(10);
 

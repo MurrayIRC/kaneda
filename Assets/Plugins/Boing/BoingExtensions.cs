@@ -2,8 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace SynCore.Tweening {
-    public static class SynTweenExtensions {
+namespace Boing {
+    public static class BoingExtensions {
         #region Transform Extensions
 
         public static Vector3Tween TweenPosition(this Transform self, Vector3 to, float duration = 0.5f) {
@@ -298,24 +298,6 @@ namespace SynCore.Tweening {
 
         public static FloatTween TweenAlpha (this Text self, float to, float duration = 0.5f) {
             TextAlphaTarget target = new TextAlphaTarget(self);
-            FloatTween tween = FloatTween.Create();
-            tween.Initialize(target, to, duration);
-            return tween;
-        }
-
-        #endregion
-
-        #region SynTextMeshPro Extensions
-
-        public static ColorTween TweenColor (this SynTextMeshPro self, Color to, float duration = 0.5f) {
-            SynTextMeshProColorTarget target = new SynTextMeshProColorTarget(self);
-            ColorTween tween = ColorTween.Create();
-            tween.Initialize(target, to, duration);
-            return tween;
-        }
-
-        public static FloatTween TweenAlpha (this SynTextMeshPro self, float to, float duration = 0.5f) {
-            SynTextMeshProAlphaTarget target = new SynTextMeshProAlphaTarget(self);
             FloatTween tween = FloatTween.Create();
             tween.Initialize(target, to, duration);
             return tween;

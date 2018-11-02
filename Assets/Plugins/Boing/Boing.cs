@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace SynCore.Tweening {
-    public partial class SynTween : MonoBehaviour {
+namespace Boing {
+    public partial class Boing : MonoBehaviour {
         public static EaseType DefaultEaseType = EaseType.SineIn;
         public static bool EnableNullChecking = false;
         public static bool FlushTweensOnLevelLoad = false;
@@ -30,15 +30,15 @@ namespace SynCore.Tweening {
 
         private bool isUpdating;
 
-        private static SynTween instance;
-        public static SynTween Instance {
+        private static Boing instance;
+        public static Boing Instance {
             get {
                 if (!instance && !applicationIsQuitting) {
-                    instance = FindObjectOfType(typeof(SynTween)) as SynTween;
+                    instance = FindObjectOfType(typeof(Boing)) as Boing;
 
                     if (!instance) {
                         GameObject obj = new GameObject("SynTween");
-                        instance = obj.AddComponent<SynTween>();
+                        instance = obj.AddComponent<Boing>();
                         DontDestroyOnLoad(obj);
                     }
                 }

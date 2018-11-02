@@ -2,7 +2,7 @@
 using System.Collections;
 using UnityEngine;
 
-namespace SynCore.Tweening {
+namespace Boing {
     public interface ITweenable {
         void Start ();
         void Pause ();

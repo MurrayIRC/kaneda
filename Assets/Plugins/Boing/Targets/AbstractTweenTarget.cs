@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-namespace SynCore.Tweening {
+namespace Boing {
     public abstract class AbstractTweenTarget<U, T> : ITweenTarget<T> where T : struct {
         protected U target;
 

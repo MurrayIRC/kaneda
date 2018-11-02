@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-namespace SynCore.Tweening {
+namespace Boing {
     public abstract class AbstractTweenable : ITweenable {
         protected bool isPaused;
         protected bool isCurrentlyManagedBySynTween;
@@ -23,7 +23,7 @@ namespace SynCore.Tweening {
                 return;
             }
 
-            SynTween.Instance.AddTween(this);
+            Boing.Instance.AddTween(this);
             isCurrentlyManagedBySynTween = true;
             isPaused = false;
         }
@@ -37,7 +37,7 @@ namespace SynCore.Tweening {
         }
 
         public virtual void Stop(bool shouldComplete = false, bool shouldCompleteImmediately = false) {
-            SynTween.Instance.RemoveTween(this);
+            Boing.Instance.RemoveTween(this);
             isCurrentlyManagedBySynTween = false;
             isPaused = true;
         }

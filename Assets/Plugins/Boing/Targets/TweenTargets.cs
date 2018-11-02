@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace SynCore.Tweening {
+namespace Boing {
     #region Transform Rotation
 
     public class TransformRotationTarget : AbstractTweenTarget<Transform, Quaternion> {
@@ -29,7 +29,7 @@ namespace SynCore.Tweening {
         }
 
         public override void SetTweenedValue (Quaternion value) {
-            if (SynTween.EnableNullChecking && !ValidateTarget()) {
+            if (Boing.EnableNullChecking && !ValidateTarget()) {
                 return;
             }
 
@@ -66,7 +66,7 @@ namespace SynCore.Tweening {
         }
 
         public void SetTweenedValue(Color value) {
-            if (SynTween.EnableNullChecking && spriteRenderer == null) {
+            if (Boing.EnableNullChecking && spriteRenderer == null) {
                 return;
             }
 
@@ -84,7 +84,7 @@ namespace SynCore.Tweening {
         }
 
         public void SetTweenedValue (float value) {
-            if (SynTween.EnableNullChecking && spriteRenderer == null) {
+            if (Boing.EnableNullChecking && spriteRenderer == null) {
                 return;
             }
 
@@ -124,7 +124,7 @@ namespace SynCore.Tweening {
         }
 
         public void SetTweenedValue(Color value) {
-            if (SynTween.EnableNullChecking && text == null) {
+            if (Boing.EnableNullChecking && text == null) {
                 return;
             }
 
@@ -142,67 +142,13 @@ namespace SynCore.Tweening {
         }
 
         public void SetTweenedValue (float value) {
-            if (SynTween.EnableNullChecking && text == null) {
+            if (Boing.EnableNullChecking && text == null) {
                 return;
             }
 
             Color color = text.color;
             color.a = value;
             text.color = color;
-        }
-    }
-
-    #endregion
-
-    #region SynTextMeshPro
-
-    public abstract class AbstractSynTextMeshProTarget {
-        protected SynTextMeshPro textMesh;
-
-        public void PrepareForUse (SynTextMeshPro t) {
-            textMesh = t;
-        }
-
-        public object GetTargetObject () {
-            return textMesh;
-        }
-    }
-
-    public class SynTextMeshProColorTarget : AbstractSynTextMeshProTarget, ITweenTarget<Color> {
-        public SynTextMeshProColorTarget (SynTextMeshPro t) {
-            PrepareForUse(t);
-        }
-
-        public Color GetTweenedValue () {
-            return textMesh.color;
-        }
-
-        public void SetTweenedValue (Color value) {
-            if (SynTween.EnableNullChecking && textMesh == null) {
-                return;
-            }
-
-            textMesh.color = value;
-        }
-    }
-
-    public class SynTextMeshProAlphaTarget : AbstractSynTextMeshProTarget, ITweenTarget<float> {
-        public SynTextMeshProAlphaTarget (SynTextMeshPro t) {
-            PrepareForUse(t);
-        }
-
-        public float GetTweenedValue () {
-            return textMesh.color.a;
-        }
-
-        public void SetTweenedValue (float value) {
-            if (SynTween.EnableNullChecking && textMesh == null) {
-                return;
-            }
-
-            Color color = textMesh.color;
-            color.a = value;
-            textMesh.color = color;
         }
     }
 
@@ -230,7 +176,7 @@ namespace SynCore.Tweening {
         }
 
         public void SetTweenedValue (Color value) {
-            if (SynTween.EnableNullChecking && material == null) {
+            if (Boing.EnableNullChecking && material == null) {
                 return;
             }
 
@@ -248,7 +194,7 @@ namespace SynCore.Tweening {
         }
 
         public void SetTweenedValue (float value) {
-            if (SynTween.EnableNullChecking && material == null) {
+            if (Boing.EnableNullChecking && material == null) {
                 return;
             }
 
@@ -268,7 +214,7 @@ namespace SynCore.Tweening {
         }
 
         public void SetTweenedValue (float value) {
-            if (SynTween.EnableNullChecking && material == null) {
+            if (Boing.EnableNullChecking && material == null) {
                 return;
             }
 
@@ -286,7 +232,7 @@ namespace SynCore.Tweening {
         }
 
         public void SetTweenedValue (Vector4 value) {
-            if (SynTween.EnableNullChecking && material == null) {
+            if (Boing.EnableNullChecking && material == null) {
                 return;
             }
 
@@ -307,7 +253,7 @@ namespace SynCore.Tweening {
         }
 
         public void SetTweenedValue (Vector2 value) {
-            if (SynTween.EnableNullChecking && material == null) {
+            if (Boing.EnableNullChecking && material == null) {
                 return;
             }
 
@@ -328,7 +274,7 @@ namespace SynCore.Tweening {
         }
 
         public void SetTweenedValue (Vector2 value) {
-            if (SynTween.EnableNullChecking && material == null) {
+            if (Boing.EnableNullChecking && material == null) {
                 return;
             }
 
@@ -371,7 +317,7 @@ namespace SynCore.Tweening {
         }
 
         public override void SetTweenedValue (float value) {
-            if (SynTween.EnableNullChecking && !ValidateTarget()) {
+            if (Boing.EnableNullChecking && !ValidateTarget()) {
                 return;
             }
 
@@ -417,7 +363,7 @@ namespace SynCore.Tweening {
         }
 
         public override void SetTweenedValue (float value) {
-            if (SynTween.EnableNullChecking && !ValidateTarget()) {
+            if (Boing.EnableNullChecking && !ValidateTarget()) {
                 return;
             }
 
@@ -442,7 +388,7 @@ namespace SynCore.Tweening {
         }
 
         public override void SetTweenedValue (Color value) {
-            if (SynTween.EnableNullChecking && !ValidateTarget()) {
+            if (Boing.EnableNullChecking && !ValidateTarget()) {
                 return;
             }
 
@@ -474,7 +420,7 @@ namespace SynCore.Tweening {
         }
 
         public override void SetTweenedValue (Rect value) {
-            if (SynTween.EnableNullChecking && !ValidateTarget()) {
+            if (Boing.EnableNullChecking && !ValidateTarget()) {
                 return;
             }
 
@@ -503,7 +449,7 @@ namespace SynCore.Tweening {
         }
 
         public override void SetTweenedValue (float value) {
-            if (SynTween.EnableNullChecking && !ValidateTarget()) {
+            if (Boing.EnableNullChecking && !ValidateTarget()) {
                 return;
             }
 
@@ -539,7 +485,7 @@ namespace SynCore.Tweening {
         }
 
         public override void SetTweenedValue (float value) {
-            if (SynTween.EnableNullChecking && !ValidateTarget()) {
+            if (Boing.EnableNullChecking && !ValidateTarget()) {
                 return;
             }
 
@@ -566,7 +512,7 @@ namespace SynCore.Tweening {
         }
 
         public override void SetTweenedValue (Color value) {
-            if (SynTween.EnableNullChecking && !ValidateTarget()) {
+            if (Boing.EnableNullChecking && !ValidateTarget()) {
                 return;
             }
 
@@ -584,7 +530,7 @@ namespace SynCore.Tweening {
         }
 
         public override void SetTweenedValue (Vector2 value) {
-            if (SynTween.EnableNullChecking && !ValidateTarget()) {
+            if (Boing.EnableNullChecking && !ValidateTarget()) {
                 return;
             }
 
@@ -602,7 +548,7 @@ namespace SynCore.Tweening {
         }
 
         public override void SetTweenedValue (Vector3 value) {
-            if (SynTween.EnableNullChecking && !ValidateTarget()) {
+            if (Boing.EnableNullChecking && !ValidateTarget()) {
                 return;
             }
 
@@ -620,7 +566,7 @@ namespace SynCore.Tweening {
         }
 
         public override void SetTweenedValue (Vector2 value) {
-            if (SynTween.EnableNullChecking && !ValidateTarget()) {
+            if (Boing.EnableNullChecking && !ValidateTarget()) {
                 return;
             }
 
@@ -642,7 +588,7 @@ namespace SynCore.Tweening {
         }
 
         public override void SetTweenedValue (Vector2 value) {
-            if (SynTween.EnableNullChecking && !ValidateTarget()) {
+            if (Boing.EnableNullChecking && !ValidateTarget()) {
                 return;
             }
 
@@ -664,7 +610,7 @@ namespace SynCore.Tweening {
         }
 
         public override void SetTweenedValue (Color value) {
-            if (SynTween.EnableNullChecking && !ValidateTarget()) {
+            if (Boing.EnableNullChecking && !ValidateTarget()) {
                 return;
             }
 
@@ -690,7 +636,7 @@ namespace SynCore.Tweening {
         }
 
         public override void SetTweenedValue (float value) {
-            if (SynTween.EnableNullChecking && !ValidateTarget()) {
+            if (Boing.EnableNullChecking && !ValidateTarget()) {
                 return;
             }
 

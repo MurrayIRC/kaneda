@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SynCore.Tweening {
+namespace Boing {
     public class IntTween : Tween<int> {
         public static IntTween Create () {
-            return SynTween.CacheIntTweens ? TweenCache<IntTween>.Pop() : new IntTween();
+            return Boing.CacheIntTweens ? TweenCache<IntTween>.Pop() : new IntTween();
         }
 
         public IntTween () { }
@@ -30,7 +30,7 @@ namespace SynCore.Tweening {
 
         public override void RecycleSelf() {
             base.RecycleSelf();
-            if (shouldRecycleTween && SynTween.CacheIntTweens) {
+            if (shouldRecycleTween && Boing.CacheIntTweens) {
                 TweenCache<IntTween>.Push(this);
             }
         }
@@ -38,7 +38,7 @@ namespace SynCore.Tweening {
 
     public class FloatTween : Tween<float> {
         public static FloatTween Create () {
-            return SynTween.CacheFloatTweens ? TweenCache<FloatTween>.Pop() : new FloatTween();
+            return Boing.CacheFloatTweens ? TweenCache<FloatTween>.Pop() : new FloatTween();
         }
 
         public FloatTween () { }
@@ -63,7 +63,7 @@ namespace SynCore.Tweening {
 
         public override void RecycleSelf () {
             base.RecycleSelf();
-            if (shouldRecycleTween && SynTween.CacheFloatTweens) {
+            if (shouldRecycleTween && Boing.CacheFloatTweens) {
                 TweenCache<FloatTween>.Push(this);
             }
         }
@@ -71,7 +71,7 @@ namespace SynCore.Tweening {
 
     public class Vector2Tween : Tween<Vector2> {
         public static Vector2Tween Create () {
-            return SynTween.CacheVector2Tweens ? TweenCache<Vector2Tween>.Pop() : new Vector2Tween();
+            return Boing.CacheVector2Tweens ? TweenCache<Vector2Tween>.Pop() : new Vector2Tween();
         }
 
         public Vector2Tween () { }
@@ -96,7 +96,7 @@ namespace SynCore.Tweening {
 
         public override void RecycleSelf () {
             base.RecycleSelf();
-            if (shouldRecycleTween && SynTween.CacheVector2Tweens) {
+            if (shouldRecycleTween && Boing.CacheVector2Tweens) {
                 TweenCache<Vector2Tween>.Push(this);
             }
         }
@@ -104,7 +104,7 @@ namespace SynCore.Tweening {
 
     public class Vector3Tween : Tween<Vector3> {
         public static Vector3Tween Create () {
-            return SynTween.CacheVector3Tweens ? TweenCache<Vector3Tween>.Pop() : new Vector3Tween();
+            return Boing.CacheVector3Tweens ? TweenCache<Vector3Tween>.Pop() : new Vector3Tween();
         }
 
         public Vector3Tween () { }
@@ -129,7 +129,7 @@ namespace SynCore.Tweening {
 
         public override void RecycleSelf () {
             base.RecycleSelf();
-            if (shouldRecycleTween && SynTween.CacheVector3Tweens) {
+            if (shouldRecycleTween && Boing.CacheVector3Tweens) {
                 TweenCache<Vector3Tween>.Push(this);
             }
         }
@@ -137,7 +137,7 @@ namespace SynCore.Tweening {
 
     public class Vector4Tween : Tween<Vector4> {
         public static Vector4Tween Create () {
-            return SynTween.CacheVector4Tweens ? TweenCache<Vector4Tween>.Pop() : new Vector4Tween();
+            return Boing.CacheVector4Tweens ? TweenCache<Vector4Tween>.Pop() : new Vector4Tween();
         }
 
         public Vector4Tween () { }
@@ -162,7 +162,7 @@ namespace SynCore.Tweening {
 
         public override void RecycleSelf () {
             base.RecycleSelf();
-            if (shouldRecycleTween && SynTween.CacheVector4Tweens) {
+            if (shouldRecycleTween && Boing.CacheVector4Tweens) {
                 TweenCache<Vector4Tween>.Push(this);
             }
         }
@@ -170,7 +170,7 @@ namespace SynCore.Tweening {
 
     public class QuaternionTween : Tween<Quaternion> {
         public static QuaternionTween Create () {
-            return SynTween.CacheQuaternionTweens ? TweenCache<QuaternionTween>.Pop() : new QuaternionTween();
+            return Boing.CacheQuaternionTweens ? TweenCache<QuaternionTween>.Pop() : new QuaternionTween();
         }
 
         public QuaternionTween () { }
@@ -195,7 +195,7 @@ namespace SynCore.Tweening {
 
         public override void RecycleSelf () {
             base.RecycleSelf();
-            if (shouldRecycleTween && SynTween.CacheQuaternionTweens) {
+            if (shouldRecycleTween && Boing.CacheQuaternionTweens) {
                 TweenCache<QuaternionTween>.Push(this);
             }
         }
@@ -203,7 +203,7 @@ namespace SynCore.Tweening {
 
     public class ColorTween : Tween<Color> {
         public static ColorTween Create () {
-            return SynTween.CacheColorTweens ? TweenCache<ColorTween>.Pop() : new ColorTween();
+            return Boing.CacheColorTweens ? TweenCache<ColorTween>.Pop() : new ColorTween();
         }
 
         public ColorTween () { }
@@ -228,7 +228,7 @@ namespace SynCore.Tweening {
 
         public override void RecycleSelf () {
             base.RecycleSelf();
-            if (shouldRecycleTween && SynTween.CacheColorTweens) {
+            if (shouldRecycleTween && Boing.CacheColorTweens) {
                 TweenCache<ColorTween>.Push(this);
             }
         }
@@ -236,7 +236,7 @@ namespace SynCore.Tweening {
 
     public class Color32Tween : Tween<Color32> {
         public static Color32Tween Create () {
-            return SynTween.CacheColor32Tweens ? TweenCache<Color32Tween>.Pop() : new Color32Tween();
+            return Boing.CacheColor32Tweens ? TweenCache<Color32Tween>.Pop() : new Color32Tween();
         }
 
         public Color32Tween () { }
@@ -261,7 +261,7 @@ namespace SynCore.Tweening {
 
         public override void RecycleSelf () {
             base.RecycleSelf();
-            if (shouldRecycleTween && SynTween.CacheColor32Tweens) {
+            if (shouldRecycleTween && Boing.CacheColor32Tweens) {
                 TweenCache<Color32Tween>.Push(this);
             }
         }
@@ -269,7 +269,7 @@ namespace SynCore.Tweening {
 
     public class RectTween : Tween<Rect> {
         public static RectTween Create () {
-            return SynTween.CacheRectTweens ? TweenCache<RectTween>.Pop() : new RectTween();
+            return Boing.CacheRectTweens ? TweenCache<RectTween>.Pop() : new RectTween();
         }
 
         public RectTween () { }
@@ -299,7 +299,7 @@ namespace SynCore.Tweening {
 
         public override void RecycleSelf () {
             base.RecycleSelf();
-            if (shouldRecycleTween && SynTween.CacheRectTweens) {
+            if (shouldRecycleTween && Boing.CacheRectTweens) {
                 TweenCache<RectTween>.Push(this);
             }
         }

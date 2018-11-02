@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace SynCore.Tweening {
+namespace Boing {
     
     public enum EaseType {
         Linear,
@@ -47,75 +47,75 @@ namespace SynCore.Tweening {
     }
 
     /// <summary>
-    ///     Helper function that hooks up the Ease types to their corresponding easing functions.
+    /// Helper function that hooks up the Ease types to their corresponding easing functions.
     /// </summary>
     public static class EaseHelper {
         public static float Ease(EaseType ease, float t, float duration) {
             switch(ease) {
-                case Tweening.EaseType.Linear:
+                case EaseType.Linear:
                     return EasingFunctions.Linear.Ease(t, duration);
 
-                case Tweening.EaseType.SineIn:
+                case EaseType.SineIn:
                     return EasingFunctions.Sine.EaseIn(t, duration);
-                case Tweening.EaseType.SineOut:
+                case EaseType.SineOut:
                     return EasingFunctions.Sine.EaseOut(t, duration);
-                case Tweening.EaseType.SineInOut:
+                case EaseType.SineInOut:
                     return EasingFunctions.Sine.EaseInOut(t, duration);
 
-                case Tweening.EaseType.QuadIn:
+                case EaseType.QuadIn:
                     return EasingFunctions.Quad.EaseIn(t, duration);
-                case Tweening.EaseType.QuadOut:
+                case EaseType.QuadOut:
                     return EasingFunctions.Quad.EaseOut(t, duration);
-                case Tweening.EaseType.QuadInOut:
+                case EaseType.QuadInOut:
                     return EasingFunctions.Quad.EaseInOut(t, duration);
 
-                case Tweening.EaseType.CubicIn:
+                case EaseType.CubicIn:
                     return EasingFunctions.Cubic.EaseIn(t, duration);
-                case Tweening.EaseType.CubicOut:
+                case EaseType.CubicOut:
                     return EasingFunctions.Cubic.EaseOut(t, duration);
-                case Tweening.EaseType.CubicInOut:
+                case EaseType.CubicInOut:
                     return EasingFunctions.Cubic.EaseInOut(t, duration);
 
-                case Tweening.EaseType.QuintIn:
+                case EaseType.QuintIn:
                     return EasingFunctions.Quint.EaseIn(t, duration);
-                case Tweening.EaseType.QuintOut:
+                case EaseType.QuintOut:
                     return EasingFunctions.Quint.EaseOut(t, duration);
-                case Tweening.EaseType.QuintInOut:
+                case EaseType.QuintInOut:
                     return EasingFunctions.Quint.EaseInOut(t, duration);
 
-                case Tweening.EaseType.ExpoIn:
+                case EaseType.ExpoIn:
                     return EasingFunctions.Expo.EaseIn(t, duration);
-                case Tweening.EaseType.ExpoOut:
+                case EaseType.ExpoOut:
                     return EasingFunctions.Expo.EaseOut(t, duration);
-                case Tweening.EaseType.ExpoInOut:
+                case EaseType.ExpoInOut:
                     return EasingFunctions.Expo.EaseInOut(t, duration);
 
-                case Tweening.EaseType.CircIn:
+                case EaseType.CircIn:
                     return EasingFunctions.Circ.EaseIn(t, duration);
-                case Tweening.EaseType.CircOut:
+                case EaseType.CircOut:
                     return EasingFunctions.Circ.EaseOut(t, duration);
-                case Tweening.EaseType.CircInOut:
+                case EaseType.CircInOut:
                     return EasingFunctions.Circ.EaseInOut(t, duration);
 
-                case Tweening.EaseType.BackIn:
+                case EaseType.BackIn:
                     return EasingFunctions.Back.EaseIn(t, duration);
-                case Tweening.EaseType.BackOut:
+                case EaseType.BackOut:
                     return EasingFunctions.Back.EaseOut(t, duration);
-                case Tweening.EaseType.BackInOut:
+                case EaseType.BackInOut:
                     return EasingFunctions.Back.EaseInOut(t, duration);
 
-                case Tweening.EaseType.ElasticIn:
+                case EaseType.ElasticIn:
                     return EasingFunctions.Elastic.EaseIn(t, duration);
-                case Tweening.EaseType.ElasticOut:
+                case EaseType.ElasticOut:
                     return EasingFunctions.Elastic.EaseOut(t, duration);
-                case Tweening.EaseType.ElasticInOut:
+                case EaseType.ElasticInOut:
                     return EasingFunctions.Elastic.EaseInOut(t, duration);
 
-                case Tweening.EaseType.BounceIn:
+                case EaseType.BounceIn:
                     return EasingFunctions.Bounce.EaseIn(t, duration);
-                case Tweening.EaseType.BounceOut:
+                case EaseType.BounceOut:
                     return EasingFunctions.Bounce.EaseOut(t, duration);
-                case Tweening.EaseType.BounceInOut:
+                case EaseType.BounceInOut:
                     return EasingFunctions.Bounce.EaseInOut(t, duration);
 
                 default:

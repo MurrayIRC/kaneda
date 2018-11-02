@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SynCore.Tweening {
+namespace Boing {
     public class TweenSequence : AbstractTweenable {
         List<ITweenable> tweenList = new List<ITweenable>();
         int currentTweenIndex = 0;
@@ -79,7 +79,7 @@ namespace SynCore.Tweening {
                 tweenList.Add(tween as ITweenable);
             }
             else {
-                SLog.Default.Error("Cannot add a tween to a sequence that does not implement ITweenable.");
+                Debug.LogError("Cannot add a tween to a sequence that does not implement ITweenable.");
             }
 
             return this;

@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SynCore.Tweening {
+namespace Boing {
     public class TweenValueTarget<T> : ITweenTarget<T> where T : struct {
         protected T target;
 
@@ -16,7 +16,7 @@ namespace SynCore.Tweening {
         }
 
         public void SetTweenedValue (T value) {
-            if (SynTween.EnableNullChecking && !ValidateTarget()) {
+            if (Boing.EnableNullChecking && !ValidateTarget()) {
                 return;
             }
 
@@ -28,7 +28,7 @@ namespace SynCore.Tweening {
         }
 
         public TweenValueTarget(T value) {
-            if (SynTween.EnableNullChecking && !ValidateTarget()) {
+            if (Boing.EnableNullChecking && !ValidateTarget()) {
                 return;
             }
             target = value;

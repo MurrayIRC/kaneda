@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using UnityEngine;
 
-namespace SynCore.Tweening {
+namespace Boing {
     public enum TransformTargetType {
         Position,
         LocalPosition,
@@ -32,7 +32,7 @@ namespace SynCore.Tweening {
         }
 
         public void SetTweenedValue (Vector3 value) {
-            if (SynTween.EnableNullChecking && !transform) {
+            if (Boing.EnableNullChecking && !transform) {
                 return;
             }
 

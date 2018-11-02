@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace SynCore.Tweening {
+namespace Boing {
     public enum LoopType {
         None,
         RestartFromBeginning,
@@ -170,7 +170,7 @@ namespace SynCore.Tweening {
 
             if (tweenState == TweenState.Complete) {
                 tweenState = TweenState.Running;
-                SynTween.Instance.AddTween(this);
+                Boing.Instance.AddTween(this);
             }
         }
 
@@ -192,11 +192,11 @@ namespace SynCore.Tweening {
 
                 if (shouldCompleteImmediately) {
                     Update();
-                    SynTween.Instance.RemoveTween(this);
+                    Boing.Instance.RemoveTween(this);
                 }
             }
             else {
-                SynTween.Instance.RemoveTween(this);
+                Boing.Instance.RemoveTween(this);
             }
         }
 
@@ -324,7 +324,7 @@ namespace SynCore.Tweening {
             isTimeScaleIndependent = false;
             tweenState = TweenState.Complete;
             isRelative = false;
-            easeType = SynTween.DefaultEaseType;
+            easeType = Boing.DefaultEaseType;
             animationCurve = null;
 
             if (nextTween != null) {
