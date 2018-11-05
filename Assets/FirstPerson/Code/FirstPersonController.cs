@@ -1,21 +1,34 @@
 ﻿using UnityEngine;
 
-public class FirstPersonCamera : MonoBehaviour {
-	// TODO: surface these in a settings menu somehow. they'll probably need to be taken out of this class.
+public class FirstPersonController : MonoBehaviour {
+	[Header("Camera")]
+	[SerializeField] private Camera camera;
 	[SerializeField] private Vector2 clamp = new Vector2(360f, 180f);
 	[SerializeField] private Vector2 sensitivity = new Vector2(2f, 2f);
 	[SerializeField] private Vector2 smoothing = new Vector2(3f, 3f);
 
+	[Header("Movement")]
+	[SerializeField] private float moveSpeed;
+
+	// Private camera values.
 	private Vector2 targetDirection;
 	private Vector2 smoothMouse;
 	private Vector2 mouseAbsolute;
+
+	// Private movement values
 
 	private void Awake() {
 		// Set target direction to the camera's initial orientation.
 		targetDirection = transform.localRotation.eulerAngles;
 	}
 
-	void LateUpdate() {
+	// Movement Code
+	private void Update() {
+		
+	}
+
+	// Camera Code
+	private void LateUpdate() {
 		Vector2 mouseDelta = Managers.Input.MouseDelta; // Poll input.
 		
 		Quaternion targetOrientation = Quaternion.Euler(targetDirection);
